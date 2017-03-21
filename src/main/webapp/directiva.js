@@ -1,2 +1,4 @@
 angular.module('myApp')
-.directive
+.directive('nombredirectiva',function(){
+	
+})
