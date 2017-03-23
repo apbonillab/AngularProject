@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: pruebaAngularBoot
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Adriana Bonilla
+Implementation-Vendor-Id: com.prueba.pr
+Build-Jdk: 1.8.0_111
+Implementation-URL: http://projects.spring.io/spring-boot/pruebaAngula
+ rBoot/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

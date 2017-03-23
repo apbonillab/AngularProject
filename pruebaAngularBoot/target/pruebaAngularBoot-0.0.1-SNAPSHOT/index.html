@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+<meta charset="UTF-8">
+<script src="resources/libs/angular.js"></script>
+<script src="resources/libs/angular-route.js"></script>
+<script src="resources/js/app.module.js"></script>
+<script src="resources/js/app.controller.js"></script>
+<script src="resources/js/app.route-config.js"></script>
+<link rel="stylesheet" href="resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="resources/css/main.css" />
+<title>TuLookApp</title>
+</head>
+<body data-ng-controller="appController">
+
+	<div class="container-fluid text-center">
+		<div class="row content">
+
+			<div class="col-md-12 text-center">
+				<h1 class="title-welcome-green">Bienvenida est&aacute;s en la
+					aplicaci&oacute;n</h1>
+				<h1 class="title-welcome-red">{{appName}}</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-8 text-right">
+				<p class="lead blue-label">Esta aplicación te enseñara a vestirte
+					según el estado del tiempo del día</p>
+
+			</div>
+			<div class="col-md-1 text-center">
+				<a href="#" class="btn btn-default">Siguiente</a>
+			</div>
+		</div>
+	
+	</div>
+</body>
+</html>
