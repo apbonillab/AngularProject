@@ -1,0 +1,64 @@
+<form name="formUbicacion" >
+	<div class = "container">
+		
+		
+		
+		<div class="row upper-banner">
+			<div class="col-md-12">
+			<div class="col-md-12" id="imgropa" class="img-responsive img-rounded banner">
+             <img src="resources/img/banner-ubicacion-superior.png" height="100%" width="100%" style="position: absolute;">
+
+			<div class="img-responsive img-rounded trans-box" align="center">
+			<label class="inside-text">Escoge tu <br> ubicación</label>
+			</div>
+
+
+			</div>
+			</div>
+		</div>
+		<div class="row">
+		<div class="col-xs-1  col-md-2 "></div>
+		<div class="col-xs-6 col-md-5">
+		<div class="row">
+			<div class="col-xs-3 col-md-5"></div>
+				<div class="col-xs-3 text-right">
+					<label><b>Pa&iacute;s: </b></label>
+				</div>
+				<div class="col-xs-5 col-md-2">
+					<label>Colombia</label>
+				</div>
+				<div class="col-xs-1 col-md-3"></div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-3 col-md-5 "></div>
+			<div class="col-xs-3 text-right">
+				<label><b>Ciudad:</b></label>
+			</div>
+			<div class="col-xs-5 col-md-4">
+				<select data-ng-required="true" name="ciudad" class="form-control" data-ng-class="getErrorClass(formUbicacion.ciudad,formUbicacion.$submitted)" data-ng-options="c.nombre for c in ciudades" data-ng-model="ciudadSeleccionada">
+					<option value="">-- seleccionar --</option>
+				</select>
+				<div ng-show="formUbicacion.$submitted">
+                              <small id="small" class="help-blocks" ng-show="formUbicacion.ciudad.$error.required">Este campo es obligatorio.</small>
+                 </div>
+			</div>
+			<div class="col-xs-1"></div>
+		</div>
+		</div>
+		<div class="col-xs-5 col-md-5"    >
+		<ul class="pager">
+					<li   class="next" ><a  data-ng-click="getClima()">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
+				</ul>
+		</div>
+		</div>
+		
+		
+		<div class="row">
+			<div class="col-md-12">
+				<img src="resources/img/banner-ubicacion-inferior.png"
+					class="img-responsive img-rounded" data-ng-class="">
+			</div>
+		</div>
+	</div>
+</form>

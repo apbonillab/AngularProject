@@ -1,0 +1,122 @@
+.title-welcome-green {
+	color: #24ca3f;
+	font-size: 400%;
+	font-family: monospace;
+	margin-top: 90px;
+}
+
+.title-welcome-red {
+	color: red;
+	font-size: 50px;
+}
+
+hr {
+	color: black;
+}
+
+body {
+	background-color: #f7f6f8;
+}
+
+.blue-label {
+	color: blue;
+}
+
+.gray-image {
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+	filter: grayscale(100%);
+}
+
+.not-selected{
+	opacity: 0.2;
+}
+
+.cont-ima{
+	padding-left: 0px;
+    padding-right: 0px;
+}
+.carrusel-imag{
+	height:100%
+}
+
+.	{
+	margin-top: 90px;
+
+}
+
+.cajita{
+	position: absolute;
+	height: 323px;
+	width: 325px;
+	top: 147px;
+	left: 331px;
+	z-index: 1;
+	background-color: #f5f5f5;
+	opacity: 0.5;
+	border-radius: 5px;	
+}
+
+.texto-en-caja{
+	position: absolute;
+	top: 269px;
+	left: 439px;
+	z-index: 2;
+	font-size: 25px;
+	width: 220px;
+}
+
+.soft-gray {
+	background-color: rgba(51, 51, 51, 0.18)
+}
+.texto-en-caja-home {
+    position: absolute;
+    top: 250px;
+    left: 410px;
+    z-index: 2;
+    font-size: 20px;
+    width: 220px;
+}
+
+.banner{
+background-repeat: no-repeat;
+background-size: contain;
+}
+
+
+/*CSS*/
+.trans-box {
+    background-color: #f5f5f5;
+    width: 30%;
+    height: 65%;
+    z-index: 1;
+    position: relative;
+    top: 11%;
+    left: 8%;
+    opacity: 0.5;
+}
+
+/*CSS*/
+.inside-text {
+    position: relative;
+    top: 38%;
+    font-size: 29px;
+    background-size: contain;
+    word-wrap: break-word;
+    color: black;
+    opacity: initial;
+}
+
+@media screen and (max-width: 699px) and (min-width: 320px) {
+   #imgropa{
+      width: 200px;
+    }
+}
+
+
+@media screen and (max-width: 1000px) and (min-width: 700px) {
+    #imgropa{
+       width: 450px;
+
+    }
+}
+

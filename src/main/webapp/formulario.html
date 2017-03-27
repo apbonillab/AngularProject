@@ -1,0 +1,41 @@
+
+
+<div class="container"  style="background-image: url(resources/img/banner-ubicacion-superior.png);" >
+<div class="row fill" >
+			
+			<form>
+							<div class="form-group">
+							    <label for="exampleInputEmail1">Tipo Documento </label>
+								   <select data-ng-options="c.nombre for c in tipoDocumentos" data-ng-model="tipoDoc">
+								   	<option value="">-- seleccionar --</option>
+								   </select>
+					  </div>
+				  <div class="form-group" ng-show="tipoDoc!=undefined">
+				   <p>	{{variableform}} : El tipo de documento escogido es: {{tipoDoc.nombre}} </p>
+				  </div>  
+				    <div class="form-group">
+					    <label for="exampleInputEmail1">Email address</label>
+					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"> </input>
+					  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">Password</label>
+				    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> </input>
+				  </div>
+			  <div class="form-group">
+			    <label for="exampleInputFile">File input</label>
+			    <input type="file" id="exampleInputFile"> </input>
+			    <p class="help-block"> Example block-level help text here. </p>
+			  </div>
+			  <div class="checkbox">
+			    <label>
+			      <input type="checkbox"> Check me out </input>
+			    </label>
+			  </div>
+
+			  <input type="text" ng-pattern="/^\d+$/" autocomplete="off" pinteger ng-model="interger" >   </input>
+			 
+		  <button type="submit" class="btn btn-default">Submit</button>
+		</form>
+
+		</div>
+</div>

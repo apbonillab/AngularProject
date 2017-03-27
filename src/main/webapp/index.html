@@ -1,48 +1,30 @@
-<html  ng-app="myApp">
-<head >
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+<meta charset="UTF-8">
+<script src="resources/libs/angular.min.js"></script>
+<script src="resources/libs/angular-validation-match.min.js"></script>
+<script src="resources/libs/angular-route.min.js"></script>
+<script src="resources/js/app.module.js"></script>
+<script src="resources/js/clima.controller.js"></script>
+<script src="resources/js/app.controller.js"></script>
+<script src="resources/js/ubicacion.controller.js"></script>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.7/angular.min.js"></script> 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-<script type="text/javascript" src="/app.js"></script>
-<script type="text/javascript" src="/controller.js"></script>
-<script type="text/javascript" src="/service.js"></script>
+<script src="resources/js/formulario.controller.js"></script>
+
+<script src="resources/js/directives/directive.validation.js"></script>
+
+<!-- nuevos modulos de prieba -->
+<script src="resources/js/formularioMor/control.formulariomor.js"></script>
+<script src="resources/js/formularioMor/services.formulariomor.js"></script>
 
 
+<script src="resources/js/app.route-config.js"></script>
+<link rel="stylesheet" href="resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="resources/css/main.css" />
+<title>TuLookApp</title>
 </head>
-<body  ng-controller="controllerhm">
-<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  <strong>Warning!</strong> Best check yo self, you're not looking too good.
-<h2 class="text-danger">Hello World!</h2>
-<div class="container-fluid">
-	<div class="row ">
-			<div class="col-xs-0  col-md-2"></div>	   		
-		    		<div class="col-xs-12  col-md-4 form-group" >
-						<label>Ingrese nombre</label>
-						<input type="text"class="form-control" ng-model="nombre">			
-					</div>
-					<div class="col-xs-12 col-md-4 form-group">
-						<label>Seleccione tipo</label>
-						<select ng-model="opt.id" class="form-control"  ng-options="opt.id as opt.nombre for opt in lista" >
-						</select>
-					</div>			
-				<div class="col-xs-0 col-md-2"></div>
-	</div>
-
-	<div class="row text-center from-group" >
-					<button ng-click="saludo()"  class="btn btn-primary btn-lg" ng-disabled="opt.id==undefined">generar</button>
-	
-	</div>
-
-<div class="row text-center form-group">
-		{{respsaludo}}
-</div>
-<nav aria-label="...">
-  <ul class="pager">
-    <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Atras</a></li>
-    <li class="next"><a href="#">Continuar <span aria-hidden="true">&rarr;</span></a></li>
-  </ul>
-</nav>
-
+<body >
+	<div ng-view></div>
 </body>
 </html>

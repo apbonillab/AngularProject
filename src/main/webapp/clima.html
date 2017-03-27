@@ -1,0 +1,108 @@
+<div class="container">
+
+	<div class="cajita" ng-show="!visibleRopa"></div>
+
+	<div class="texto-en-caja" ng-show="!visibleRopa">
+		<label><b><p>Estado del</p>
+				<p>tiempo</p></b></label>
+	</div>
+
+	<div class="row" ng-show="!visibleRopa" style="margin-top: 90px">
+		<div class="col-md-12">
+			<img src="resources/img/banner-clima-superior.png"
+				class="img-responsive img-rounded" data-ng-class="">
+		</div>
+	</div>
+
+
+	<div class="row" ng-show="!visibleRopa">
+		<div class="col-xs-3">
+			
+		</div>
+		
+		<div class="col-xs-2" style="margin-top:20px">
+			<input type="date" ng-model="fecha" ng-change="msgValidate()"
+				min="{{currentDate | date: 'yyyy-MM-dd'}}"
+				max="{{maxDate | date: 'yyyy-MM-dd'}}">
+		</div>
+		<div class="col-xs-2" style="margin-top:20px">El clima {{msg}} {{fecha |
+			date:'MM/dd/yyyy'}}</div>
+
+		<div class="col-xs-5">
+			<ul class="pager">
+				<li class="next"><a data-ng-click="getRopa()">Siguiente <span
+						aria-hidden="true">&rarr;</span>
+				</a></li>
+			</ul>
+		</div>
+
+
+	</div>
+	<div class="row" ng-show="visibleRopa" style="margin-top: 30px">
+		<div class="panel panel-default">
+			<div class="panel-body soft-gray">
+				<h3 class="text-center">Seg&uacute;n el clima de hoy te
+					sugerimos:</h3>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row content">
+		<div class="col-md-4">
+			<h2>D&iacute;a Soleado</h2>
+			<img src="resources/img/soleado.png"
+				class="img-responsive img-rounded"
+				ng-class="(clima!=1?'not-selected':'')" height="100%">
+		</div>
+		<div class="col-md-4">
+			<h2>D&iacute;a Nublado</h2>
+			<img src="resources/img/nublado.png"
+				class="img-responsive img-rounded"
+				ng-class="(clima!=2?'not-selected':'')" height="100%">
+		</div>
+		<div class="col-md-4">
+			<h2>D&iacute;a Lluvioso</h2>
+			<img src="resources/img/lluvioso.png"
+				class="img-responsive img-rounded"
+				ng-class="(clima!=3?'not-selected':'')" height="100%">
+		</div>
+	</div>
+
+</div>
+<br />
+<br />
+<div>
+
+	<div ng-show="visibleRopa">
+
+		<div class="container" style="background-color: white">
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div ng-switch="clima">
+					<div ng-switch-when="1">
+						<div class="col-md-4" ng-class="text-center">
+							<img src="resources/img/ropa-soleado.png" class="img-responsive">
+						</div>
+
+					</div>
+					<div ng-switch-when="2">
+						<div class="col-md-4" ng-class="text-center">
+							<img src="resources/img/ropa-nublado.png" class="img-responsive">
+						</div>
+					</div>
+					<div ng-switch-when="3">
+						<div class="col-md-4" ng-class="text-center">
+							<img src="resources/img/ropa-lluvioso.png" class="img-responsive">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4"></div>
+
+
+
+			</div>
+
+		</div>
+	</div>
+</div>
