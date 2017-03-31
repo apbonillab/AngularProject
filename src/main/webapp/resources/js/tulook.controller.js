@@ -1,8 +1,13 @@
+(function () {
+	'use strict';
+
 angular.module('app').controller('tuLookController', ["$scope","$http","cedHttp","$location",function($scope,$http,cedHttp,$location) {
     
     $scope.ciudades = [];
     $scope.visibleRopa=false;
-    $scope.ocasion={};
+    $scope.ocasion={
+    		 id: 0
+    };
 
     
 	$scope.validarCamposRequeridos = function() {
@@ -36,7 +41,6 @@ angular.module('app').controller('tuLookController', ["$scope","$http","cedHttp"
     function getOcasiones() {
     cedHttp.getOcasiones().then(function(data) {
        $scope.ocasionesList = data;
-        $("input:radio").removeAttr("checked");
     }, function(response) {
       console.log(response);
     });
@@ -46,3 +50,5 @@ angular.module('app').controller('tuLookController', ["$scope","$http","cedHttp"
 
     
 }]);
+
+})();

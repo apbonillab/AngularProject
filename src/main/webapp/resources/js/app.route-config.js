@@ -20,4 +20,8 @@ function config($routeProvider){
 			templateUrl:'crear-cuenta.html',
 			controller:'crearCuentaController'
 		})
+		.when('/activacion',{
+			templateUrl:'activacion.html',
+			controller:'autenticacionController'
+		})
 	}

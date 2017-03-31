@@ -6,24 +6,12 @@
 	<version>0.0.5-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<distributionManagement>
-		<repository>
-			<id>central</id>
-			<name>bancodebogota-releases</name>
-			<url>https://bancodebogota.jfrog.io/bancodebogota/maven-releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>bancodebogota-snapshots</name>
-			<url>https://bancodebogota.jfrog.io/bancodebogota/maven-releases</url>
-		</snapshotRepository>
-	</distributionManagement>
-
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.2.RELEASE</version>
 	</parent>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -36,62 +24,36 @@
 			<scope>test</scope>
 		</dependency>
 
+<!-- https://mvnrepository.com/artifact/org.json/json -->
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20090211</version>
+</dependency>
+
+		<!-- <dependency> <groupId>org.liquibase</groupId> <artifactId>liquibase-core</artifactId> 
+			<version>3.4.1</version> </dependency> -->
+	
 		<!-- Spring data JPA -->
+		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-data-jpa</artifactId> 
+			<exclusions> <exclusion> <groupId>org.apache.tomcat</groupId> <artifactId>tomcat-jdbc</artifactId> 
+			</exclusion> </exclusions> </dependency> Oracle JDBC driver <dependency> 
+			<groupId>com.oracle</groupId> <artifactId>ojdbc6</artifactId> <version>11.2.0</version> 
+			</dependency> HikariCP connection pool <dependency> <groupId>com.zaxxer</groupId> 
+			<artifactId>HikariCP</artifactId> <version>2.6.0</version> </dependency> -->
+<!-- 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.apache.tomcat</groupId>
-					<artifactId>tomcat-jdbc</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<!-- Oracle JDBC driver -->
-		<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc6</artifactId>
-			<version>11.2.0</version>
-		</dependency>
-
-		<!-- HikariCP connection pool -->
-		<dependency>
-			<groupId>com.zaxxer</groupId>
-			<artifactId>HikariCP</artifactId>
-			<version>2.6.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-			<version>1.2.3.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-
+			
+		</dependency> -->
 	</dependencies>
 
 	<properties>
-		<maven.test.skip>false</maven.test.skip>
+		<maven.test.skip>true</maven.test.skip>
 		<java-version>1.8</java-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
-
-	<scm>
-		<connection>scm:git:https://github.com/bancodebogota/rutadigital-digital1.git</connection>
-		<developerConnection>scm:git:git@github.com:bancodebogota/rutadigital-digital1.git</developerConnection>
-		<url>https://github.com/bancodebogota/rutadigital-digital1.git</url>
-		<tag>tu-look-0.0.2</tag>
-	</scm>
-
 	<build>
 		<plugins>
 			<!-- Package as an executable jar/war -->
@@ -109,18 +71,15 @@
 				</configuration>
 			</plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5.3</version>
-			        <configuration>
-        				<checkModificationExcludes>
-            					<checkModificationExclude>pom.xml</checkModificationExclude>
-        				</checkModificationExcludes>
-    				</configuration>
-			</plugin>
+			<!-- <plugin> <groupId>org.liquibase</groupId> <artifactId>liquibase-maven-plugin</artifactId> 
+				<version>3.4.1</version> <configuration> <driver>mysql-connector-java</driver> 
+				<url>jdbc:mysql://localhost:3306/mydb</url> <username>root</username> <password>abc123</password> 
+				<changeLogFile>src/main/resources/db/changelog/db.changelog-master.yaml</changeLogFile> 
+				</configuration> </plugin> -->
+
 
 		</plugins>
+
 	</build>
 
 </project>

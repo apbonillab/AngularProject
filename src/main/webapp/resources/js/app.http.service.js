@@ -19,7 +19,7 @@ function cedHttp($http,$log) {
             .then(returnOcasiones,handleError);
     
       function returnOcasiones(response) {
-            return response.data.ocasiones;
+            return response.data;
         }
         
       function handleError(response) {

@@ -1,19 +1,48 @@
 package co.com.bancodebogota.dto;
+//
+//import co.com.bancodebogota.model.impl.TICiudadImpl;
+//
+//public interface ICiudadDto extends java.io.Serializable{
+//
+//	/**
+//	 * @return the ciudades
+//	 */
+//	java.util.List<TICiudadImpl> getCiudades();
+//
+//	/**
+//	 * @param ciudades the ciudades to set
+//	 */
+//	void setCiudades(java.util.List<TICiudadImpl> ciudades);
+//
+//	void addCiudad(TICiudadImpl pCiudad);
+//
+//}
+public class ICiudadDto{
+private Long id;
+	
+	private String nombre;
 
-import co.com.bancodebogota.model.impl.TICiudadImpl;
+	
+	public ICiudadDto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-public interface ICiudadDto extends java.io.Serializable{
+	public Long getId() {
+		return id;
+	}
 
-	/**
-	 * @return the ciudades
-	 */
-	java.util.List<TICiudadImpl> getCiudades();
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-	/**
-	 * @param ciudades the ciudades to set
-	 */
-	void setCiudades(java.util.List<TICiudadImpl> ciudades);
+	public String getNombre() {
+		return nombre;
+	}
 
-	void addCiudad(TICiudadImpl pCiudad);
-
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	
 }

@@ -2,14 +2,13 @@ package co.com.bancodebogota;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
+
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @SpringBootApplication
 @Configuration
 @ComponentScan
-@RefreshScope
 public class AplicationTuLook {
 
 	

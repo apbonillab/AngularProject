@@ -1,87 +1,98 @@
-<form >
-	<div class = "container">
-		
-		
-		
+<form>
+	<div class="container">
 		<div class="row upper-banner">
 			<div class="col-md-12" style="bottom: 10px;">
-			<div class="img-responsive img-rounded banner" style="background-image: url('resources/img/banner-ubicacion-superior.png'); height: 450px;">
-			<div class="img-responsive img-rounded trans-box" align="center">
-			
-			<div  class="row" style="padding-top: 10%;">
-				<div class="col-xs-2"></div>
-				<div class="col-xs-8">
-				<label class="inside-text">Escoge tu <br> ubicación</label>
+				<div class="img-responsive img-rounded banner"
+					style="background-image: url('resources/img/banner-ubicacion-superior.png'); height: 450px;">
+					<div class="img-responsive img-rounded trans-box" align="center">
+
+						<div class="row" style="padding-top: 10%;">
+							<div class="col-xs-2"></div>
+							<div class="col-xs-8">
+								<label class="inside-text">Escoge tu <br>
+									ubicación
+								</label>
+							</div>
+							<div class="col-xs-2"></div>
+						</div>
+						<br />
+						<div class="row">
+							<div class="col-xs-1"></div>
+							<div class="col-xs-10 text-right">
+								<div class="row">
+
+									<div class="col-xs-4 text-right" style="padding-right: 10px">
+										<label>Pa&iacute;s:</label>
+									</div>
+									<div class="col-xs-8 text-left" style="padding-left: 0px">
+										<label>Colombia</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-1"></div>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-1"></div>
+							<div class="col-xs-10">
+								<div class="row">
+									<div class="col-xs-4 text-right" style="padding-right: 10px">
+										<label><b>Ciudad:</b></label>
+									</div>
+									<div class="col-xs-8 text-left" style="padding-left: 0px">
+										<select data-ng-required="true"
+											class="form-control selectCiudad"
+											data-ng-options="c.nombre for c in ciudades"
+											data-ng-model="ciudadSeleccionada">
+											<option value="">-- seleccionar --</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-1"></div>
+						</div>
+
+					</div>
 				</div>
-				<div class="col-xs-2"></div>
-			</div>
-			<br/>
-			<div class="row">
-				<div class="col-xs-1"></div>
-				<div class="col-xs-10 text-right">
+				</div>
+				
+				<div class="col-xs-10">
 					<div class="row">
-						
-						<div class="col-xs-4 text-right" style="padding-right: 10px">
-								<label>Pa&iacute;s:</label>
+						<div class="col-xs-3"></div>
+						<div class="col-xs-9 text-center">
+							<h4>Para darte sugerencias acertadas selecciona la
+								ocasi&oacute;n donde estar&aacute;s</h4>
 						</div>
-						<div class="col-xs-8 text-left" style="padding-left: 0px">
-								<label>Colombia</label>
-						</div>
-				 	</div>
-				</div>
-				<div class="col-xs-1"></div>
-			</div>
-		
-		<div class="row">
-			<div class="col-xs-1"></div>
-			<div class="col-xs-10">
-				<div class="row">
-					<div class="col-xs-4 text-right" style="padding-right: 10px">
-						<label><b>Ciudad:</b></label>
 					</div>
-					<div class="col-xs-8 text-left" style="padding-left: 0px">
-						<select data-ng-required="true" class="form-control selectCiudad" data-ng-options="c.nombre for c in ciudades" data-ng-model="ciudadSeleccionada">
-							<option value="">-- seleccionar --</option>
-						</select>
+					<div class="row">
+						<div data-ng-repeat="item in ocasionesList">
+							<div class="col-xs-6 col-md-3">
+								<input type="radio" name="ocasiones" ng-model="ocasion.id"
+									value="{{item}}"> {{item.descripcion}}
+
+
+							</div>
+						</div>
+						<div class="col-xs-10"></div>
+						<div class="col-xs-2  selectOcasion"></div>
+
 					</div>
 				</div>
-			</div>
-			<div class="col-xs-1"></div>
-		</div>
-
-		</div>
-		</div>
-		<div class="col-xs-10">
-		<div class="row">
-		<div class="col-xs-3"></div>
-		<div class="col-xs-9 text-center"><h4>Para darte sugerencias acertadas selecciona la ocasi&oacute;n donde estar&aacute;s</h4></div>
-		</div>
-		<div class="row" >
-		
-
-			<div 	 data-ng-repeat="item in ocasionesList" >
-				<div class="col-xs-3">
-					<input data-ng-required="true" type="radio"  name="ocasiones" ng-model="ocasion.id" data-ng-value="item">
-					  {{item.descripcion}}
+				<div class="col-xs-2">
+					<ul class="pager">
+						<li class="next"><a class="presionar"
+							data-ng-click="validarCamposRequeridos()">Siguiente <span
+								aria-hidden="true">&rarr;</span></a></li>
+					</ul>
 				</div>
 			</div>
-			<div class="col-xs-10"></div>
-			<div class="col-xs-2  selectOcasion"></div>
-		
-		</div>
-		</div>
-		<div class="col-xs-2"    >
-		<ul class="pager">
-					<li   class="next" ><a class="presionar" data-ng-click="validarCamposRequeridos()">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
-				</ul>
-		</div>
-		</div>
 
-		<div class="row">
-			<div class="col-md-12">
-				<img src="resources/img/banner-ubicacion-inferior.png"
-					class="img-responsive img-rounded" data-ng-class="">
+			<div class="row">
+				<div class="col-md-12">
+					<img src="resources/img/banner-ubicacion-inferior.png"
+						class="img-responsive img-rounded" data-ng-class="">
+				</div>
 			</div>
-		</div>
-	</div>
+		
+</div>
 </form>
