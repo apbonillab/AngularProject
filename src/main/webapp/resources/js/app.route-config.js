@@ -16,17 +16,8 @@ function config($routeProvider){
 		when('/clima',{
 			templateUrl:'clima.html',
 			controller:'climaController'
+		}).when('/crear-cuenta',{
+			templateUrl:'crear-cuenta.html',
+			controller:'crearCuentaController'
 		})
-		.
-		when('/formulario',{
-			templateUrl:'formulario.html',
-			controller:'controllerForm'
-		})
-		.
-	    when('/formulariomor',{
-			templateUrl:'resources/js/formularioMor/mor.html',
-			controller:'controllerFormMor'
-		})
-
-
 	}

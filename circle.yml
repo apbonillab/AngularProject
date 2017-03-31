@@ -1,0 +1,21 @@
+general:
+  artifacts:
+    - "target/rutadigital-*.jar"
+machine:
+  java:
+    version: oraclejdk8
+dependencies:
+  override:
+    - git config --global user.email circleci@circleci
+    - git config --global user.name CircleCI
+    - mvn install:install-file -Dfile=src/main/resources/ojdbc6.jar -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0 -Dpackaging=jar
+    - mvn dependency:resolve
+test:
+  override:
+    - mvn clean install
+deployment:
+  production:
+    branch: master
+    commands:
+      - for t in `git tag`; do     git push origin :$t;     git tag -d $t; done
+      - last_commit=$(git log -1); if [[ $last_commit != *"[maven-release-plugin]"* ]]; then mvn -B release:clean release:prepare release:perform; fi

@@ -1,0 +1,54 @@
+<div class="container-fluid  fondo-crear-cuenta" data-ng-controller="crearCuentaController" style="height: 1350px;">
+	<div class="row">
+		<div class="col-xs-12">
+			<form class="form-cc" data-ng-submit="signUp()" name="formCC">
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="box">
+							<table width="100%">
+								<caption>Crea una cuenta</caption>
+								<tbody>
+									<tr>
+										<td width="46%"><label>Nombre</label><br><input type="text" required></td>
+										<td width="46%"><label>Apellidos</label><br><input type="text" required></td>
+									</tr>
+									<tr>
+										<td width="46%"><label>Nombre Usuario</label><br><input type="text" data-ng-model="username" required></td>
+										<td width="46%"><label>Mail</label><br><input type="email" data-ng-model="email" required></td>
+									</tr>
+									<tr>
+										<td width="46%"><label>Contraseña</label><br><input type="password" data-ng-model="password" data-ng-change="checkPassword()" required></td>
+										<td width="46%"><label>Repetir contraseña</label><br><input type="password" name="pwd-validation" required data-ng-model="passwordConfirmation" data-ng-change="checkPassword()"></td>
+									</tr>
+									<tr>
+										<td width="46%"><label>Fecha de Nacimiento</label><br><input type="date" required></td>
+									</tr>
+								</tbody>
+							</table>
+						
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							
+							<button type="submit">Crear cuenta</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>	

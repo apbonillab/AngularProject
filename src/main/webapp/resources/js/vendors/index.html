@@ -1,0 +1,76 @@
+<html>
+
+	<head>
+		<script src="dist/auth.js"></script>
+	</head>
+
+	<body>
+		<br>
+		<label> 
+			Username: 
+			<input id="username" name="username" type="text"></input> 
+		</label>
+		<br><br>
+
+		<label> 
+			Email: 
+			<input id="email" name="email" type="email"></input> 
+		</label>
+		<br><br>
+
+		<label> 
+			Password: 
+			<input id="password" name="password" type="password"></input> 
+		</label>
+		<br><br>
+
+		<a href="#" onclick="login()">login</a>
+		<a href="#" onclick="signUp()">sign up</a>
+	<body>
+
+
+	<script>
+		var authenticationService = new AuthenticationService(AWS.CognitoIdentityServiceProvider);
+		function login() {
+			authenticationService.login(getUsername(), getPassword(), function(err, user) {
+				if (err) {
+					console.log('Error logging in the application: ' + err);
+					return;
+				}
+				console.log('Succesfully logged in as...');
+				console.log(user);
+			});
+		}
+
+		function signUp() {
+			authenticationService.signUp(getUsername(), getEmail(), getPassword(), function(err, token) {
+				if (err) {
+					console.log('Error signing up in the application: ' + err);
+					return;
+				}
+				console.log('Succesfully signed up in with token...');
+				console.log(token);
+			});
+		}
+
+		function getUsername() {
+			return document.getElementById('username').value;
+		}
+
+		function getName() {
+			return document.getElementById('name').value;
+		}
+
+		function getEmail() {
+			return document.getElementById('email').value;
+		}
+
+		function getPassword() {
+			return document.getElementById('password').value;
+		}		
+	</script>
+
+</html>
+
+
+

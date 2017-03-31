@@ -1,16 +1,29 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.prueba.pr</groupId>
-  <artifactId>pruebaAngularBoot</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
-  
-  <parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>bancodebogota.digital.temp</groupId>
+	<artifactId>tu-look</artifactId>
+	<version>0.0.5-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>bancodebogota-releases</name>
+			<url>https://bancodebogota.jfrog.io/bancodebogota/maven-releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>bancodebogota-snapshots</name>
+			<url>https://bancodebogota.jfrog.io/bancodebogota/maven-releases</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.2.RELEASE</version>
 	</parent>
-	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -24,7 +37,7 @@
 		</dependency>
 
 		<!-- Spring data JPA -->
-<!-- 		<dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 			<exclusions>
@@ -35,26 +48,49 @@
 			</exclusions>
 		</dependency>
 
-		Oracle JDBC driver
+		<!-- Oracle JDBC driver -->
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
 			<version>11.2.0</version>
 		</dependency>
 
-		HikariCP connection pool
+		<!-- HikariCP connection pool -->
 		<dependency>
 			<groupId>com.zaxxer</groupId>
 			<artifactId>HikariCP</artifactId>
 			<version>2.6.0</version>
-		</dependency> -->
+		</dependency>
+
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+			<version>1.2.3.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 
 	</dependencies>
 
 	<properties>
-		<maven.test.skip>true</maven.test.skip>
+		<maven.test.skip>false</maven.test.skip>
 		<java-version>1.8</java-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
+
+	<scm>
+		<connection>scm:git:https://github.com/bancodebogota/rutadigital-digital1.git</connection>
+		<developerConnection>scm:git:git@github.com:bancodebogota/rutadigital-digital1.git</developerConnection>
+		<url>https://github.com/bancodebogota/rutadigital-digital1.git</url>
+		<tag>tu-look-0.0.2</tag>
+	</scm>
 
 	<build>
 		<plugins>
@@ -71,6 +107,17 @@
 					<source>1.8</source>
 					<target>1.8</target>
 				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+			        <configuration>
+        				<checkModificationExcludes>
+            					<checkModificationExclude>pom.xml</checkModificationExclude>
+        				</checkModificationExcludes>
+    				</configuration>
 			</plugin>
 
 		</plugins>

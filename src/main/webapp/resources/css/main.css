@@ -16,10 +16,7 @@ hr {
 
 body {
 	background-color: #f7f6f8;
-	height:100%;
 }
-
-
 
 .blue-label {
 	color: blue;
@@ -30,24 +27,24 @@ body {
 	filter: grayscale(100%);
 }
 
-.not-selected{
+.not-selected {
 	opacity: 0.2;
 }
 
-.cont-ima{
+.cont-ima {
 	padding-left: 0px;
-    padding-right: 0px;
-}
-.carrusel-imag{
-	height:100%
+	padding-right: 0px;
 }
 
-.	{
+.carrusel-imag {
+	height: 100%
+}
+
+.upper-banner {
 	margin-top: 90px;
-
 }
 
-.cajita{
+.cajita {
 	position: absolute;
 	height: 323px;
 	width: 325px;
@@ -56,13 +53,13 @@ body {
 	z-index: 1;
 	background-color: #f5f5f5;
 	opacity: 0.5;
-	border-radius: 5px;	
+	border-radius: 5px;
 }
 
-.texto-en-caja{
+.texto-en-caja {
 	position: absolute;
 	top: 269px;
-	left: 439px;
+	left: 390px;
 	z-index: 2;
 	font-size: 25px;
 	width: 220px;
@@ -71,31 +68,48 @@ body {
 .soft-gray {
 	background-color: rgba(51, 51, 51, 0.18)
 }
+
 .texto-en-caja-home {
-    position: absolute;
-    top: 250px;
-    left: 410px;
-    z-index: 2;
-    font-size: 20px;
-    width: 220px;
+	position: absolute;
+	top: 250px;
+	left: 410px;
+	z-index: 2;
+	font-size: 20px;
+	width: 220px;
 }
 
-.banner{
-background-repeat: no-repeat;
-background-size: contain;
+.banner {
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 
 /*CSS*/
 .trans-box {
-    background-color: #f5f5f5;
+    /*background-color: #f5f5f5;*/
     width: 30%;
     height: 65%;
     z-index: 1;
     position: relative;
     top: 11%;
     left: 8%;
-    opacity: 0.5;
+    /*opacity: 0.5;*/
+    background-repeat: no-repeat;
+	background: rgba(169, 163, 163, 0.5);
+}
+
+.form-cc .box{
+    width: 98%;
+    height: 65%;
+    z-index: 1;
+    position: relative;
+    top: 40px;
+    left: 40px;
+    padding-left: 25px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    background-repeat: no-repeat;
+	background: rgba(226, 225, 225, 0.59);
 }
 
 /*CSS*/
@@ -108,48 +122,92 @@ background-size: contain;
     color: black;
     opacity: initial;
 }
-/*
-@media screen and (max-width: 999px) and (min-width: 320px) {
-   #imgropa{
-      height: 200px;
-    }
-}
-
-
-@media screen and (max-width: 1800px) and (min-width: 1000px) {
-    #imgropa{
-       height: 450px;
-
-    }
-}
-*/
-
-.formulario{
-	background-repeat: no-repeat;
-	background: rgba(169, 163, 163, 0.5);
-    /* z-index: 2; */
+.inside-text-banner {
     position: relative;
-    /* margin-top: 20%; */
-    z-index: 1;
-    left: 5;
-    left: 5%;
-    width: 90%;
-    height: 90%;
-    top: 10%;
-    color: #080808;
-    /* right: 5%; */
-}
-#map {
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
-    background: red;
-    display: block;
+    top: 23%;
+    font-size: 29px;
+    background-size: contain;
+    word-wrap: break-word;
+    color: black;
+    opacity: initial;
 }
 
-.fill{
-    width:100%;
-    height:100%;
-    min-height:100%;
-    padding:10px;
+.img-texto {
+	position: relative;
+	float: left;
+}
+
+.img-texto h2 {
+	position: absolute;
+	bottom: 35%;
+	right: 0;
+	z-index: 999;
+	padding: 10px;
+	color: Black;
+	font-family: sans-serif;
+	left: 0;
+}
+
+input[type=date]::-webkit-outer-spin-button,
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=date] {
+    -moz-appearance:textfield;
+}
+.presionar{
+	cursor:pointer;
+}
+
+.fondo-crear-cuenta{
+	background-image: url("../img/fondo-crear-cuenta.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.form-cc input[type="text"], .form-cc input[type="password"], .form-cc input[type="email"]{
+	border: 2px solid black;
+	background: transparent;
+	width: 98%;
+	height: 35px;
+	font-size: 1.3em;
+}
+
+.form-cc label{
+	font-weight: normal;
+	margin-top: 10px;
+	width: 98%;
+	text-align: center;
+	font-size: 1.3em;
+}
+
+.form-cc table th, .form-cc table td { 
+	padding-right: 25px; 
+}
+
+
+.form-cc table caption{
+	font-weight: bold;
+	color: black;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.form-cc input[type="date"]{
+	border: 2px solid black;
+	background: transparent;
+	width: 98%;
+	font-size: 1.3em;
+	height: 35px;
+}
+
+.form-cc button{
+	width: 98%;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	background-color: #5183d2;
+	border: 0px;
 }
